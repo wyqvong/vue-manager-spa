@@ -20,10 +20,10 @@
             v-model="loginForm.password"
             placeholder="Password"
             name="password"
-            @keyup="handleLogin()"
+            @keyup.enter.native="handleLogin"
           />
         </el-form-item>
-        <el-button @click="handleLogin()">Login</el-button>
+        <el-button @click.enter.native="handleLogin">Login</el-button>
       </el-form>
     </div>
   </div>
@@ -59,6 +59,14 @@ export default {
       },
       loading: false,
       redirect: undefined
+    }
+  },
+  watch: {
+    $route: {
+      handler: function(route) {
+        this.redirect = route.query && route.query.redirect
+      },
+      immediate: true
     }
   },
   methods: {

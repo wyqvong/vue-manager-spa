@@ -1,15 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Home from '../views/Home.vue'
+import Home from '../views/Home.vue'
 import Login from '../views/login/index.vue'
 
+import Layout from '@/layout'
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Login',
-    component: Login
+    component: Layout,
+    redirect: '/Home',
+    children: [{
+      path: 'Home',
+      name: 'Home',
+      component: Home,
+      meta: { title: '主页', icon: 'Home' }
+    }]
   },
   {
     path: '/login',
