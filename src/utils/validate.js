@@ -1,5 +1,5 @@
 /**
- * @param {string} path
+ * @param {string} path 判断字符串是否是https?:|mailto:|tel: 开头的
  * @returns {Boolean}
  */
 export function isExternal(path) {
