@@ -1,5 +1,7 @@
 # vue-manager-spa
 
+- 本管理系统模板是基于vue-element-admin加以一些样式和功能的修饰来完成的.
+
 ## 技术栈以及组件库
 
 - vue-cli: 快速构建项目
@@ -13,6 +15,8 @@
 - sass: css预处理器
 
 - element-ui: ui组件库
+
+- js-cookie：处理cookie的API
 
 ## Project setup
 
