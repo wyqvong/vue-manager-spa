@@ -1,12 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Login from '../views/login/index.vue'
 
 import Layout from '@/layout'
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/views/login/index'),
+    hidden: true
+  },
   {
     path: '/',
     component: Layout,
@@ -17,11 +22,6 @@ const routes = [
       component: Home,
       meta: { title: '主页', icon: 'Home' }
     }]
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login
   },
   {
     path: '/about',
