@@ -45,3 +45,7 @@ npm run lint
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### 开发日记
+
+- el-menu导航栏为垂直时，设置不了menu-trigger

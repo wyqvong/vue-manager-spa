@@ -17,6 +17,11 @@ export default {
   components: {
     Navbar,
     Sidebar
+  },
+  computed: {
+    sidebar() {
+      return this.$store.state.app.sidebar
+    }
   }
 }
 </script>

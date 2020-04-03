@@ -1,0 +1,62 @@
+#app{
+  .main-container {
+    min-height: 100%;
+    transition: margin-left .28s;
+  }
+
+  .sidebar-container {
+    width: 180px !important;
+    height: calc(100% - 50px);
+    font-size: 0px;
+    overflow: hidden;
+    background-color: #304156;
+
+    .scrollbar-wrapper {
+      overflow-x: hidden !important;
+    }
+    
+    .el-scrollbar {
+      // background-color: #1f2d3d;
+      height: 100%;
+    }
+
+    .is-horizontal {
+      display: none;
+    }
+
+    a {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+    }
+    .el-menu {
+      border: none;
+      height: 100%;
+      width: 100% !important;
+    }
+
+    .submenu-title-noDropdown,
+    .el-submenu__title {
+      &:hover {
+        background-color: #263445 !important;
+      }
+    }
+
+    .is-active>.el-submenu__title {
+      color: #f4f4f5 !important;
+      // background-color: #92CEA7 !important;
+    }
+
+    & .nest-menu .el-submenu>.el-submenu__title,
+    & .el-submenu .el-menu-item {
+      // min-width: $sideBarWidth !important;
+      background-color: #1f2d3d !important;
+
+      &:hover {
+        background-color: #001528 !important;
+      }
+    }
+
+
+  }
+}

@@ -17,19 +17,32 @@ const routes = [
     component: Layout,
     redirect: '/Home',
     children: [{
-      path: 'Home',
+      path: 'home',
       name: 'Home',
       component: Home,
-      meta: { title: '主页', icon: 'Home' }
+      meta: { title: '主页' }
     }]
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/mamber',
+    component: Layout,
+    redirect: '/mamber/teacher',
+    name: 'Mamber',
+    meta: { title: '成员列表' },
+    children: [
+      {
+        path: 'grade17',
+        name: 'Grade17',
+        component: () => import('@/views/member/grade17'),
+        meta: { title: '2017级' }
+      },
+      {
+        path: 'grade18',
+        name: 'Grade18',
+        component: () => import('@/views/member/grade18'),
+        meta: { title: '2018级' }
+      }
+    ]
   }
 ]
 

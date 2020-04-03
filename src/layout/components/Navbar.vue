@@ -66,6 +66,10 @@ export default {
     height: 100%;
     line-height: 50px;
 
+    &:focus {
+    outline: none;
+    }
+
     .avatar-container {
       margin-right: 30px;
       display: flex;
