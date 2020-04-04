@@ -43,6 +43,23 @@ const routes = [
         meta: { title: '2018级' }
       }
     ]
+  },
+  {
+    path: '/task',
+    component: Layout,
+    redirect: '/task/project',
+    name: 'Task',
+    meta: { title: '任务列表' },
+    alwaysShow: true,
+    hidden: false,
+    children: [
+      {
+        path: 'project',
+        name: 'Project',
+        component: () => import('@/views/task/project'),
+        meta: { title: '项目' }
+      }
+    ]
   }
 ]
 
