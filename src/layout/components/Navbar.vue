@@ -24,17 +24,19 @@
         </el-dropdown-menu>
       </el-dropdown>
     </div>
+    <search />
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import Logo from '@/components/logo'
-
+import Search from '@/components/search'
 export default {
   name: 'Navbar',
   components: {
-    Logo
+    Logo,
+    Search
   },
   data() {
     return {
@@ -57,7 +59,7 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  height: 50px;
+  height: 100px;
   overflow: hidden;
   background: #333333;
 

@@ -11,12 +11,14 @@
 <script>
 import { Sidebar } from './components'
 import Navbar from './components/Navbar'
+import AppMain from './components/AppMain'
 
 export default {
   name: 'Layout',
   components: {
     Navbar,
-    Sidebar
+    Sidebar,
+    AppMain
   },
   computed: {
     sidebar() {

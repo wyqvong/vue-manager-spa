@@ -10,6 +10,7 @@
         :unique-opened="false"
         :collapse-transition="false"
         menu-trigger="click"
+        mode="vertical"
       >
         <sidebar-item v-for="route in routes" :key="route.path" :item="route" :base-path="route.path" />
       </el-menu>
@@ -37,8 +38,8 @@ export default {
       }
       return path
     },
-    isCollapse() { // 子菜单是否折叠
-      return !this.sidebar.opened
+    isCollapse() { // 是否水平折叠收起菜单
+      return this.sidebar.opened
     }
   }
 }
