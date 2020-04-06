@@ -60,6 +60,18 @@ const routes = [
         meta: { title: '项目' }
       }
     ]
+  },
+  {
+    path: '/form',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Form',
+        component: () => import('@/views/form/index'),
+        meta: { title: 'Form', icon: 'form' }
+      }
+    ]
   }
 ]
 

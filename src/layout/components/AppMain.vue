@@ -25,6 +25,7 @@ export default {
   width: calc(100vw - 180px);
   overflow: auto;
   margin-left: 180px;
+  padding: 20px;
   &::-webkit-scrollbar {
   display: none;
   }
