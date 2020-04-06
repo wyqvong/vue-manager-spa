@@ -3,12 +3,10 @@
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
         :default-active="activeMenu"
-        :collapse="isCollapse"
         background-color="#304156"
         text-color="#bfcbd9"
         active-text-color="#409EFF"
         :unique-opened="false"
-        :collapse-transition="false"
         menu-trigger="click"
         mode="vertical"
       >
@@ -37,10 +35,10 @@ export default {
         return meta.activeMenu
       }
       return path
-    },
-    isCollapse() { // 是否水平折叠收起菜单
-      return this.sidebar.opened
     }
+    // isCollapse() { // 是否水平折叠收起菜单
+    //   return !this.sidebar.opened
+    // }
   }
 }
 </script>

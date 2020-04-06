@@ -20,7 +20,7 @@ export default {
   height: 50px;
   line-height: 50px;
   float: left;
-  margin-left: 5vw;
+  margin-left: 28px;
   cursor: default;
 }
 </style>

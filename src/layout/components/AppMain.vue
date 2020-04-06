@@ -18,10 +18,16 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .app-main{
-  min-height: calc(100vh - 50px);
-  width: 100%;
-  overflow: hidden;
+  height: calc(100vh - 100px);
+  /* max-height: calc(100vh - 114px); */
+  width: calc(100vw - 180px);
+  overflow: auto;
+  margin-left: 180px;
+  &::-webkit-scrollbar {
+  display: none;
+  }
 }
+
 </style>
