@@ -1,6 +1,6 @@
 # vue-manager-spa
 
-- 本管理系统模板是基于vue-element-admin加以一些样式和功能的修饰来完成的.
+- 本管理系统模板是参考花裤衩大神的vue-admin-template为模板加以一些样式和功能的修饰来制作的.
 
 ## 技术栈以及组件库
 
