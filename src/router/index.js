@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 import Layout from '@/layout'
 Vue.use(VueRouter)
@@ -19,7 +18,7 @@ const routes = [
     children: [{
       path: 'home',
       name: 'Home',
-      component: Home,
+      component: () => import('@/views/Home'),
       meta: { title: '主页' }
     }]
   },
@@ -79,8 +78,9 @@ const router = new VueRouter({
   routes
 })
 
-// router.beforeEach((to, from, next) => {
-
-// });
+export function resetRouter() {
+  // const newRouter = createRouter()
+  // router.matcher = newRouter.matcher // reset router
+}
 
 export default router

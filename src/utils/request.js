@@ -5,6 +5,7 @@ import { getToken } from '@/utils/auth'
 
 // 创建一个axios实例
 const service = axios.create({
+  baseURL: 'https://www.fastmock.site/mock/25bcb960f466bca3aa441ebf91328733/mock',
   timeout: 5000
 })
 
@@ -26,7 +27,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     const res = response.data
-    if (res.code !== 20000) {
+    if (res.code !== 200) {
       Message({
         message: res.message || 'Error',
         type: 'error',
