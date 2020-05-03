@@ -22,15 +22,22 @@ router.beforeEach(async(to, from, next) => {
     } else {
       const hasGetUserInfo = store.getters.name
       if (hasGetUserInfo) {
+        console.log(hasGetUserInfo)
         next()
       } else {
         try {
           // get user info
-          await store.dispatch('user/getInfo')
-          next()
+          store.dispatch('user/getInfo').then(res => { // 拉取info
+            const roles = res.role
+            store.dispatch('user/GenerateRoutes', { roles }).then(() => { // 生成可访问的路由表
+              router.addRoutes(store.getters.addRouters) // 动态添加可访问路由表
+              next(to.path) // hack方法 确保addRoutes已完成
+            })
+          })
+          // next()
         } catch (error) {
           // remove token and go to login page to re-login
-          await store.dispatch('user/resetToken')
+          store.dispatch('user/resetToken')
           next(`/login?redirect=${to.path}`)
         }
       }

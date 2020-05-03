@@ -4,7 +4,9 @@ import VueRouter from 'vue-router'
 import Layout from '@/layout'
 Vue.use(VueRouter)
 
-const routes = [
+// 所有权限通用路由表
+// 如首页和登录页和一些不用权限的公用页面
+export const constantRouterMap = [
   {
     path: '/login',
     name: 'Login',
@@ -21,27 +23,6 @@ const routes = [
       component: () => import('@/views/Home'),
       meta: { title: '主页' }
     }]
-  },
-  {
-    path: '/mamber',
-    component: Layout,
-    redirect: '/mamber/teacher',
-    name: 'Mamber',
-    meta: { title: '成员列表' },
-    children: [
-      {
-        path: 'grade17',
-        name: 'Grade17',
-        component: () => import('@/views/member/grade17'),
-        meta: { title: '2017级' }
-      },
-      {
-        path: 'grade18',
-        name: 'Grade18',
-        component: () => import('@/views/member/grade18'),
-        meta: { title: '2018级' }
-      }
-    ]
   },
   {
     path: '/task',
@@ -74,13 +55,47 @@ const routes = [
   }
 ]
 
-const router = new VueRouter({
-  routes
+const createRouter = () => new VueRouter({
+  // mode: 'history', // require service support
+  scrollBehavior: () => ({ y: 0 }),
+  routes: constantRouterMap
 })
 
+// 实例化vue的时候只挂载constantRouter
+const router = new VueRouter({
+  routes: constantRouterMap
+})
+
+// 异步挂载的路由
+// 动态需要根据权限加载的路由表
+export const asyncRouterMap = [
+  {
+    path: '/mamber',
+    component: Layout,
+    redirect: '/mamber/teacher',
+    name: 'Mamber',
+    meta: { title: '成员列表' },
+    children: [
+      {
+        path: 'grade17',
+        name: 'Grade17',
+        component: () => import('@/views/member/grade17'),
+        meta: { title: '2017级' }
+      },
+      {
+        path: 'grade18',
+        name: 'Grade18',
+        component: () => import('@/views/member/grade18'),
+        meta: { title: '2018级' }
+      }
+    ]
+  },
+  { path: '*', redirect: '/404', hidden: true }
+]
+
 export function resetRouter() {
-  // const newRouter = createRouter()
-  // router.matcher = newRouter.matcher // reset router
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // reset router
 }
 
 export default router
