@@ -4,8 +4,8 @@
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
-          <div class="user-name">{{ username }}</div>
-          <img src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" class="user-avatar">
+          <div class="user-name">{{ name }}</div>
+          <img :src="avatar" class="user-avatar">
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
           <router-link to="/account/profile">
@@ -40,12 +40,13 @@ export default {
   },
   data() {
     return {
-      username: '王大大'
+      // username: '王大大'
     }
   },
   computed: {
     ...mapGetters([
-      'avatar'
+      'avatar',
+      'name'
     ])
   },
   methods: {
