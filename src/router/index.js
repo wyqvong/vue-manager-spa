@@ -19,6 +19,7 @@ export const constantRouterMap = [
     redirect: '/account/profile',
     name: 'Account',
     hidden: true,
+    meta: { title: '用户' },
     children: [
       {
         path: 'profile',
@@ -65,14 +66,12 @@ export const constantRouterMap = [
   {
     path: '/form',
     component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form' }
-      }
-    ]
+    children: [{
+      path: 'index',
+      name: 'Form',
+      component: () => import('@/views/form/index'),
+      meta: { title: 'Form' }
+    }]
   }
 ]
 

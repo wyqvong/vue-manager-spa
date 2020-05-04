@@ -22,7 +22,6 @@ router.beforeEach(async(to, from, next) => {
     } else {
       const hasGetUserInfo = store.getters.name
       if (hasGetUserInfo) {
-        console.log(hasGetUserInfo)
         next()
       } else {
         try {
