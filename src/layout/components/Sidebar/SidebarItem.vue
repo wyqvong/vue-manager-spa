@@ -63,11 +63,11 @@ export default {
           return true
         }
       })
-      // 当只有一个子路由时，默认情况下会显示该子路由
+      // 当只有一个子路由时，默认情况下会直接显示该子路由
       if (showingChildren.length === 1) {
         return true
       }
-      // 当没有子路由时，直接显示父
+      // 当没有子路由时，直接显示当前路由
       if (showingChildren.length === 0) {
         this.onlyOneChild = { ... parent, path: '', noShowingChildren: true }
         return true

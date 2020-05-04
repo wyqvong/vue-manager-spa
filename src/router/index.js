@@ -14,6 +14,27 @@ export const constantRouterMap = [
     hidden: true
   },
   {
+    path: '/account',
+    component: Layout,
+    redirect: '/account/profile',
+    name: 'Account',
+    hidden: true,
+    children: [
+      {
+        path: 'profile',
+        name: 'Profile',
+        component: () => import('@/views/account/profile'),
+        meta: { title: '个人中心' }
+      },
+      {
+        path: 'setting',
+        name: 'Setting',
+        component: () => import('@/views/account/setting'),
+        meta: { title: '个人设置' }
+      }
+    ]
+  },
+  {
     path: '/',
     component: Layout,
     redirect: '/Home',
@@ -49,7 +70,7 @@ export const constantRouterMap = [
         path: 'index',
         name: 'Form',
         component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        meta: { title: 'Form' }
       }
     ]
   }
